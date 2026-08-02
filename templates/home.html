@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forest Weather Index Predictor</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="glass-card">
+
+<h1> Forest Weather Index Predictor</h1>
+
+<p class="subtitle">
+Predict the Fire Weather Index using Machine Learning.
+</p>
+
+<form action="{{ url_for('predict_datapoint') }}" method="POST">
+
+<div class="form-grid">
+
+<div class="input-group">
+<label><i class="fa-solid fa-temperature-three-quarters"></i> Temperature (°C)</label>
+<input type="number" step="any" name="Temperature" required>
+</div>
+
+<div class="input-group">
+<label><i class="fa-solid fa-droplet"></i> Relative Humidity (%)</label>
+<input type="number" step="any" name="RH" required>
+</div>
+
+<div class="input-group">
+<label><i class="fa-solid fa-wind"></i> Wind Speed (km/h)</label>
+<input type="number" step="any" name="Ws" required>
+</div>
+
+<div class="input-group">
+<label><i class="fa-solid fa-cloud-rain"></i> Rainfall (mm)</label>
+<input type="number" step="any" name="Rain" required>
+</div>
+
+<div class="input-group">
+<label>
+FFMC
+<span class="info-icon" title="Fine Fuel Moisture Code">
+<i class="fa-solid fa-circle-info"></i>
+</span>
+</label>
+<input type="number" step="any" name="FFMC" required>
+</div>
+
+<div class="input-group">
+<label>
+DMC
+<span class="info-icon" title="Duff Moisture Code">
+<i class="fa-solid fa-circle-info"></i>
+</span>
+</label>
+<input type="number" step="any" name="DMC" required>
+</div>
+
+<div class="input-group">
+<label>
+ISI
+<span class="info-icon" title="Initial Spread Index">
+<i class="fa-solid fa-circle-info"></i>
+</span>
+</label>
+<input type="number" step="any" name="ISI" required>
+</div>
+
+<div class="input-group">
+<label><i class="fa-solid fa-fire-flame-curved"></i> Fire Class</label>
+
+<select name="Classes" required>
+
+<option value="" disabled selected>Select Class</option>
+
+<option value="0">Not Fire</option>
+
+<option value="1">Fire</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label><i class="fa-solid fa-location-dot"></i> Region</label>
+
+<select name="Region" required>
+
+<option value="" disabled selected>Select Region</option>
+
+<option value="0">Bejaia</option>
+
+<option value="1">Sidi Bel-Abbes</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button type="submit">
+
+
+
+Predict FWI
+
+</button>
+
+</form>
+
+<div class="info-card">
+
+<h4><i class="fa-solid fa-book-open"></i> FWI Components</h4>
+
+<p><strong>FFMC</strong> — Fine Fuel Moisture Code</p>
+
+<p><strong>DMC</strong> — Duff Moisture Code</p>
+
+<p><strong>ISI</strong> — Initial Spread Index</p>
+
+</div>
+
+{% if results %}
+
+<div class="result-card">
+
+<h3>Predicted Fire Weather Index</h3>
+
+<div class="prediction">
+
+{{ "%.2f"|format(results) }}
+
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>

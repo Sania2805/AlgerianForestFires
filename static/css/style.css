@@ -1,0 +1,541 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:50px 20px;
+
+    background:linear-gradient(
+        135deg,
+        #f7fbff 0%,
+        #edf6ff 45%,
+        #dcecff 100%
+    );
+
+}
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:100%;
+    max-width:1000px;
+
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.glass-card{
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.55);
+
+    border-radius:24px;
+
+    padding:55px;
+
+    box-shadow:
+        0 20px 45px rgba(52,72,97,.10);
+
+    transition:.35s;
+
+}
+
+.glass-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 28px 70px rgba(15,23,42,.18);
+
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+.icon-circle{
+
+    width:58px;
+
+    height:58px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#edf4ff;
+
+    color:#2563eb;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    margin-bottom:18px;
+
+    box-shadow:none;
+
+}
+
+h1{
+
+    text-align:center;
+
+    font-size:34px;
+
+    color:#1f2937;
+
+    font-weight:650;
+
+    letter-spacing:-0.5px;
+
+    margin-bottom:8px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#6b7280;
+
+    font-size:15px;
+
+    max-width:520px;
+
+    margin:0 auto;
+
+    line-height:1.7;
+
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:22px;
+
+}
+
+.full-width{
+
+    grid-column:1/3;
+
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.input-group label{
+
+    color:#334155;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+}
+
+.input-group i{
+
+    margin-right:8px;
+
+    color:#2563eb;
+
+}
+
+.input-group input{
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:1px solid #d5dee9;
+
+    background:#ffffff;
+
+    outline:none;
+
+    font-size:15px;
+
+    color:#1e293b;
+
+    transition:.3s;
+
+}
+
+.input-group input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+.input-group input:focus{
+
+    border-color:#7aaeff;
+
+    box-shadow:
+        0 0 0 4px rgba(59,130,246,.10);
+
+}
+.input-group select{
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:1px solid #d5dee9;
+
+    background:#ffffff;
+
+    outline:none;
+
+    font-size:15px;
+
+    color:#1e293b;
+
+    transition:.3s;
+
+    appearance:none;
+
+    cursor:pointer;
+
+}
+
+.input-group select:focus{
+
+    border-color:#7aaeff;
+
+    box-shadow:
+        0 0 0 4px rgba(59,130,246,.10);
+
+}
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+
+    width:100%;
+
+    margin-top:35px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        #5ea8ff,
+        #4b8df8
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(59,130,246,.20);
+
+    background:linear-gradient(
+        135deg,
+        #4b8df8,
+        #377ef5
+    );
+
+}
+button i{
+
+    margin-right:10px;
+
+}
+
+/* ===========================
+   RESULT CARD
+=========================== */
+
+.result-card{
+
+    margin-top:35px;
+
+    background:#f8fbff;
+    border:1px solid #edf2f7;
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.result-card h3{
+
+    color:#334155;
+
+    margin-bottom:18px;
+
+}
+
+.prediction-value{
+
+    font-size:44px;
+
+font-weight:700;
+
+color:#377ef5;
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.prediction-text{
+
+    font-size:18px;
+
+    color:#475569;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#475569;
+
+    font-size:14px;
+
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+.glass-card{
+
+    animation:fadeIn .7s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .full-width{
+
+        grid-column:1;
+
+    }
+
+    .glass-card{
+
+        padding:30px;
+
+    }
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+}
+/* ===========================
+   DROPDOWN
+=========================== */
+
+.input-group select{
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:1px solid #d5dee9;
+
+    background:#ffffff;
+
+    outline:none;
+
+    font-size:15px;
+
+    color:#1e293b;
+
+    transition:.3s;
+
+    appearance:none;
+
+    cursor:pointer;
+
+}
+
+.input-group select:focus{
+
+    border-color:#7aaeff;
+
+    box-shadow:
+        0 0 0 4px rgba(59,130,246,.10);
+
+}
+
+/* ===========================
+   INFO ICON
+=========================== */
+
+.info-icon{
+
+    color:#94a3b8;
+
+    margin-left:6px;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+}
+
+.info-icon:hover{
+
+    color:#2563eb;
+
+}
+
+/* ===========================
+   FWI INFO CARD
+=========================== */
+
+.info-card{
+
+    margin-top:28px;
+
+    padding:18px 22px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.55);
+
+    border:1px solid rgba(200,215,235,.6);
+
+}
+
+.info-card h4{
+
+    margin-bottom:12px;
+
+    color:#334155;
+
+    font-size:16px;
+
+}
+
+.info-card p{
+
+    color:#64748b;
+
+    margin:6px 0;
+
+    font-size:14px;
+
+}
