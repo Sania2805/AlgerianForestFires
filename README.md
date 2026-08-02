@@ -104,7 +104,7 @@ Algerian-Forest-Fires/
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/Algerian-Forest-Fires.git
+git clone https://github.com/Sania2805/AlgerianForestFires.git
 ```
 
 Move into the project directory
